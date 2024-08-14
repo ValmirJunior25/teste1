@@ -52,6 +52,5 @@ def ler_arquivo(nome):
             pessoa[3] = pessoa[3].replace('\n', '')
             print(f'{pessoa[0]:^70}{pessoa[1]:^10}{pessoa[2]:^15}{pessoa[3]:^45}')
         print('-'*140)
-        sleep(2)
     finally:
         arquivo.close()
