@@ -49,6 +49,6 @@ def cadastrar(arq, nome='desconhecido', idade=0):
             print(f'\033[0;31mERRO na passagem de dados para o arquivo.\033[m')
         else:
             print('-'*40)
-            print(f'\033[0;33mCadastro de {nome} feito com suceço.\033[m')
+            print(f'\033[0;33mCadastro de {nome} feito com sucesso.\033[m')
             print('-'*40)
             a.close
