@@ -42,15 +42,16 @@ def ler_arquivo(nome):
     except:
         erro('Na leitura do arquivo.')
     else:
-        nome.replace('_', ' ')
-        nome.replace('.txt', '.')
+        nome = nome.replace('_', ' ')
+        nome = nome.replace('.txt', '')
         cabeçalho(nome)
         print(f'{'NOME':^70}{'IDADE':^10}{'SEXO':^15}{'CIDADE':^45}')
+        print('-'*140)
         for linha in arquivo:
             pessoa = linha.split(';')
             pessoa[3] = pessoa[3].replace('\n', '')
-            print(f'{pessoa[0]:^70};{pessoa[1]:^10};{pessoa[2]:^15};{pessoa[3]:^45}')
+            print(f'{pessoa[0]:^70}{pessoa[1]:^10}{pessoa[2]:^15}{pessoa[3]:^45}')
+        print('-'*140)
+        sleep(2)
     finally:
         arquivo.close()
-
-

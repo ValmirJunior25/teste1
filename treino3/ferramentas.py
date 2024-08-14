@@ -7,9 +7,9 @@ def cabeçalho(txt):
 
 
 def erro(descrição):
-    print('='*140,'\n')
+    print('~'*140,'\n')
     print(f'\033[0;31mERRO! {descrição}\033[m'.center(140),'\n')
-    print('='*140,'\n')
+    print('~'*140,'\n')
 
 
 def confirmação(txt):
@@ -29,8 +29,11 @@ def leia_int(txt):
 def continuar(txt):
     escolha = ' '
     while escolha not in 'ns':
-        escolha = input(f'{txt} ').strip().lower()[0]
-        if escolha not in 'ns':
+        try:
+            escolha = input(f'{txt} ').strip().lower()[0]
+            if escolha not in 'ns':
+                erro('Escolha invalida')
+        except:
             erro('Escolha invalida')
     if escolha in 's':
         return True
