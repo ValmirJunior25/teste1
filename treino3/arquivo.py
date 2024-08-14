@@ -1,5 +1,6 @@
 from ferramentas import *
 
+
 def criar_arquivo(nome):
     try:
         arq = open(nome, 'wt+')
@@ -20,9 +21,9 @@ def verificar_arquivo(nome):
         return True
     
 
-def cadastrar(arq, nome='desconhecido', idade=0 , sexo='não informado', cidade='desconhecido'):
+def cadastrar(arq, nome='não informado', idade=0 , sexo='não informado', cidade='não informado'):
     try:
-        arquivo = open(arq, 'wt')
+        arquivo = open(arq, 'at')
     except:
         erro('No cadastro.')
     else:
@@ -44,8 +45,12 @@ def ler_arquivo(nome):
         nome.replace('_', ' ')
         nome.replace('.txt', '.')
         cabeçalho(nome)
-        print(f'{'NOME':^70}{'IDADE':^10}{'SEXO':^10}{'CIDADE':^50}')
-        for item in arquivo:
-            print(f'{item} - {arquivo[item]}')
+        print(f'{'NOME':^70}{'IDADE':^10}{'SEXO':^15}{'CIDADE':^45}')
+        for linha in arquivo:
+            pessoa = linha.split(';')
+            pessoa[3] = pessoa[3].replace('\n', '')
+            print(f'{pessoa[0]:^70};{pessoa[1]:^10};{pessoa[2]:^15};{pessoa[3]:^45}')
+    finally:
+        arquivo.close()
 
 

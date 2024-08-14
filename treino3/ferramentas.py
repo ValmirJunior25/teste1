@@ -25,8 +25,15 @@ def leia_int(txt):
     else:
         return txt
     
+    
 def continuar(txt):
-    if txt in 's':
+    escolha = ' '
+    while escolha not in 'ns':
+        escolha = input(f'{txt} ').strip().lower()[0]
+        if escolha not in 'ns':
+            erro('Escolha invalida')
+    if escolha in 's':
         return True
     else:
         return False
+

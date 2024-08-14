@@ -21,7 +21,7 @@ while True:
     elif escolha == 2:
         while True:
             nome = (input('Nome do arquivo: ').strip().replace(' ', '_')+ '.txt')
-            if continuar(input(f'Deseja usar "\033[0;33m{nome}"\033[m como o nome do arquivo? ').strip().lower()[0]):
+            if continuar(f'Deseja usar "\033[0;33m{nome}"\033[m como o nome do arquivo?'):
                 criar_arquivo(nome)
                 nome_arquivo = nome
                 break
@@ -48,7 +48,7 @@ while True:
                       input('Idade: '),
                       input('Sexo: '),
                       input('Ciade: '))
-            if continuar(input(f'Deseja continuar cadastrando? ').strip().lower()[0]):
+            if continuar('Deseja continar cadastrando?'):
                 continue
             else:
                 break
