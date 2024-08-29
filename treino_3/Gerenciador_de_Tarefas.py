@@ -15,7 +15,7 @@ while True:
               '( 2 ) - Marcar tarefas com feita.\n'
             f'( 3 ) - Sair da lista ( {nome_lista} )')
         print('-='*70)
-        escolha = leia_int(input('digite aqui: ').strip())
+        escolha = leia_int('Opção: ')
 
 
         if escolha == 1:
@@ -32,12 +32,7 @@ while True:
 
         elif escolha == 2:
             quantidade = numero_de_tarefas(nome_lista_txt)
-            while True:
-                numero = input('Número da tarefa concluída: ')
-                if leia_int(numero):
-                    break
-                else:
-                    erro('Opção invalida')
+            numero = leia_int('Numero da tarefa: ')
             marcar_tarefas(nome_lista_txt, numero)
 
         elif escolha == 3:
@@ -46,18 +41,9 @@ while True:
             erro('Opção invalida')
 
 
-    desejo = None
-    while desejo not in [1, 2]:
-        print('-='*70)
-        print('( 1 ) - Selecionar outra lista de tarefas.\n'
-            '( 2 ) - Sair do aplicativo.')
-        print('-='*70)
-        desejo = leia_int(input('Digite aqui: ').strip())
-        if desejo not in [1, 2]:
-            erro('Opção invalida')
-    if desejo == 1:
-        continue
-    elif desejo == 2:
-        print('Aplicativo finalizando')
-        break 
+    escolha = sair()
+    if escolha:
+        break
+    else:
+        pass
         
