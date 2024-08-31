@@ -1,17 +1,17 @@
 
 
 def erro(txt):
-    print(f'\n\033[0;31mERRO! {txt}\033[m'.center(140), '\n')
+    print(f'\n\033[0;31mERRO! {txt}\033[m'.center(130), '\n')
 
 
 def sucesso(txt):
-    print(f'\033[0;33m{txt}\033[m'.center(140), '\n')
+    print(f'\033[0;33m{txt}\033[m'.center(130), '\n')
     
 
 def cabeçalho(txt):
-    print('='*140,'\n')
-    print(f'\033[0;32m{txt}\033[m'.center(140), '\n')
-    print('='*140,'\n')
+    print('='*130,'\n')
+    print(f'\033[0;32m{txt}\033[m'.center(130), '\n')
+    print('='*130,'\n')
 
 
 def leia_int(finalidade_do_numero):
@@ -35,10 +35,10 @@ def modificar_arquivo_txt_pra_nome(nome_do_arquivo):
 
 
 def sair():
-    print('-'*140)
+    print('-'*130)
     print('Pressione "Enter" para reiniciar.\n'
           'Digite "Esc" para sair.')
-    print('-'*140)
+    print('-'*130)
     escolha = input('--> ').strip().lower()
     if escolha == 'esc':
         return True           # Sair

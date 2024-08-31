@@ -1,4 +1,5 @@
 from util import *
+from os import remove
 
 
 def verificar_arquivo(nome_do_arquivo):
@@ -19,6 +20,15 @@ def criar_arquivo(nome_do_arquivo):
         erro('Na criação do arquivo.')
     else:
         sucesso('Arquivo criado com sucesso.')
+
+
+def deletar_arquivo(nome_arquivo):
+    try:
+        remove(nome_arquivo)
+    except:
+        erro('Ao deletar o arquivo.')
+    else:
+        sucesso('Arquivo deletado com sucesso.')
 
 
 def adicionar_tarefas(nome_do_arquivo, tarefa):
@@ -42,12 +52,12 @@ def mostrar_tarefas(nome_do_arquivo):
         erro('Ao abrir o arquivo para exibir a lista de tarefas')
     else:
         try:
-            print('-'*140)
+            print('-'*130)
             cont = 0
             for tarefa in arquivo:
                 cont += 1
                 print(f'[ {cont} ] - {tarefa}')
-            print('-'*140)
+            print('-'*130)
            
         except:
             erro('Ao exibir a lista de tarefas')
